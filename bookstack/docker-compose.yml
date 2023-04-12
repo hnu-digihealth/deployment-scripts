@@ -2,10 +2,10 @@
 version: "3.8"
 services:
   bookstack:
-    image: lscr.io/linuxserver/bookstack
+    image: linuxserver/bookstack
     container_name: bookstack
     env_file:
-      -.env
+      - .env
     volumes:
       - ./config/bookstack:/config
     ports:
@@ -14,7 +14,7 @@ services:
     depends_on:
       - bookstack_db
   bookstack_db:
-    image: lscr.io/linuxserver/mariadb
+    image: linuxserver/mariadb
     container_name: bookstack_db
     env_file:
       - .env
